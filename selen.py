@@ -12,9 +12,9 @@ from pymongo import MongoClient,errors
 
 
 ##
-DOMAIN = '172.18.0.2'
+DOMAIN = 'domain'
 PORT = 27017
-host = "mongodb://root:mongolak@172.18.0.2:27017"
+host = "mongodb://user:password@domain:27017"
 DB_NAME = "altfragen"
 client = MongoClient(host)
 db = client.altfragen
@@ -28,11 +28,11 @@ print(client.server_info())
 #m1
 #login
 ##
-driver=webdriver.Chrome("/usr/bin/chromedriver")
+driver=webdriver.Chrome("/path/to/driver")
 driver.get('https://www.altklausurendb.de/login.php')
 time.sleep(2)
-driver.find_element(By.XPATH,'//*[@id="login_username"]').send_keys('shahin')
-driver.find_element(By.XPATH,'//*[@id="login_password"]').send_keys('7aDpCS4PjxWB')
+driver.find_element(By.XPATH,'//*[@id="login_username"]').send_keys('user')
+driver.find_element(By.XPATH,'//*[@id="login_password"]').send_keys('password')
 driver.find_element(By.XPATH,'/html/body/div/div/form/fieldset/input[5]').click()
 
 time.sleep(2)
